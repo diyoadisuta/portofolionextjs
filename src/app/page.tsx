@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, ExternalLink, Code, Database, Globe, Smartphone, ChevronDown } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Code, Database, Globe, Smartphone, ChevronDown, FileText, Download } from 'lucide-react';
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('home');
@@ -116,6 +116,24 @@ export default function Portfolio() {
               >
                 <Mail size={20} />
                 Email
+              </a>
+              <a
+                href="https://docs.google.com/document/d/1UwGEdHCMGfzg38Sl_0iN4vhxdeN6iSWkFqjT8iEkIUc/edit?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+              >
+                <FileText size={20} />
+                View CV
+              </a>
+              <a
+                href="https://drive.usercontent.google.com/download?id=1izLBEggnEtVLBqBJL2wTsEMoPyw7Zhhn&export=download&authuser=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
+              >
+                <Download size={20} />
+                Download CV
               </a>
             </div>
           </motion.div>
