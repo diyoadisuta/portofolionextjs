@@ -266,40 +266,44 @@ export default function Portfolio() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  title: "E-Commerce Web App",
-                  description: "Full-stack e-commerce platform with user authentication, product catalog, and payment integration.",
-                  tech: ["React", "Node.js", "MongoDB", "Stripe"],
-                  image: "🛒"
+                  title: "KomposKita",
+                  description: "AI-powered waste classification web app for composting education. Helps users identify compostable waste and provides composting guidance.",
+                  tech: ["Next.js", "TensorFlow", "Machine Learning", "Supabase"],
+                  image: "♻️",
+                  github: "https://github.com/diyoadisuta/KomposKita",
+                  demo: "https://kompos-kita-steel.vercel.app/"
                 },
                 {
-                  title: "Task Management System",
-                  description: "Collaborative task management application with real-time updates and team collaboration features.",
-                  tech: ["Next.js", "PostgreSQL", "Socket.io", "Tailwind"],
-                  image: "📋"
+                  title: "TaskWise",
+                  description: "Modern task management application built with Next.js. Features task organization, priority management, and productivity tracking.",
+                  tech: ["Next.js", "TypeScript", "Prisma", "Tailwind CSS"],
+                  image: "📋",
+                  github: "https://github.com/diyoadisuta/TaskWise",
+                  demo: "https://task-wise-five.vercel.app/"
                 },
                 {
-                  title: "Weather Dashboard",
-                  description: "Responsive weather application with location-based forecasts and interactive maps.",
-                  tech: ["JavaScript", "OpenWeather API", "Chart.js"],
-                  image: "🌤️"
+                  title: "Moodiometry",
+                  description: "Bangkit 2024 Capstone Project - Mental health tracking mobile app with mood monitoring and stress level analysis for better well-being.",
+                  tech: ["Kotlin", "Cloud Computing", "Machine Learning", "Mobile Development"],
+                  image: "📱",
+                  github: "https://github.com/diyoadisuta/Moodiometry",
+                  demo: null
                 },
                 {
-                  title: "Personal Finance Tracker",
-                  description: "Mobile-first application for tracking expenses and managing personal budgets.",
-                  tech: ["React Native", "Firebase", "Chart.js"],
-                  image: "💰"
+                  title: "Story Submission",
+                  description: "Interactive web application for story submission and management. Built with modern JavaScript and responsive design principles.",
+                  tech: ["JavaScript", "Vite", "CSS", "HTML"],
+                  image: "�",
+                  github: "https://github.com/diyoadisuta/StorySubmission",
+                  demo: null
                 },
                 {
-                  title: "University Course Portal",
-                  description: "Academic portal for course registration, grade tracking, and student-teacher communication.",
-                  tech: ["PHP", "MySQL", "Bootstrap", "jQuery"],
-                  image: "🎓"
-                },
-                {
-                  title: "Chat Application",
-                  description: "Real-time messaging app with group chats, file sharing, and emoji reactions.",
-                  tech: ["Socket.io", "Express", "MongoDB", "React"],
-                  image: "💬"
+                  title: "Portfolio Website",
+                  description: "Modern, responsive portfolio website showcasing my projects and skills. Built with Next.js and featuring smooth animations.",
+                  tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+                  image: "�",
+                  github: "https://github.com/diyoadisuta/portofolionextjs",
+                  demo: null
                 }
               ].map((project, index) => (
                 <motion.div
@@ -321,14 +325,26 @@ export default function Portfolio() {
                     ))}
                   </div>
                   <div className="flex gap-4">
-                    <button className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors">
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
+                    >
                       <Github size={16} />
                       Code
-                    </button>
-                    <button className="flex items-center gap-2 text-green-600 hover:text-green-800 transition-colors">
-                      <ExternalLink size={16} />
-                      Demo
-                    </button>
+                    </a>
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-green-600 hover:text-green-800 transition-colors"
+                      >
+                        <ExternalLink size={16} />
+                        Demo
+                      </a>
+                    )}
                   </div>
                 </motion.div>
               ))}
