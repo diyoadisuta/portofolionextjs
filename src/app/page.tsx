@@ -504,7 +504,7 @@ export default function Portfolio() {
                     "Menyelesaikan proyek akhir berbasis cloud sebagai bagian dari tim lintas disiplin (Machine Learning, Mobile Development, dan Cloud Computing).",
                     "Mengimplementasikan CI/CD pipeline dan menerapkan best practice dalam pengelolaan infrastruktur cloud."
                   ].map((text, index) => (
-                    <motion.p
+                    <motion.div
                       key={index}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -513,8 +513,8 @@ export default function Portfolio() {
                       className="flex items-start gap-3"
                     >
                       <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
-                      {text}
-                    </motion.p>
+                      <span>{text}</span>
+                    </motion.div>
                   ))}
                 </div>
                 
@@ -585,7 +585,7 @@ export default function Portfolio() {
                     "Mengimplementasikan sistem autentikasi, manajemen data dengan MySQL, serta pengolahan API untuk kebutuhan aplikasi.",
                     "Bekerja dalam tim agile untuk menyelesaikan proyek akhir berbasis studi kasus nyata, dengan penggunaan Git untuk kolaborasi versi."
                   ].map((text, index) => (
-                    <motion.p
+                    <motion.div
                       key={index}
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
@@ -594,8 +594,8 @@ export default function Portfolio() {
                       className="flex items-start gap-3"
                     >
                       <div className="w-2 h-2 rounded-full bg-green-500 mt-2 flex-shrink-0"></div>
-                      {text}
-                    </motion.p>
+                      <span>{text}</span>
+                    </motion.div>
                   ))}
                 </div>
                 
