@@ -164,7 +164,7 @@ export default function Portfolio() {
                 { href: "https://github.com/diyoadisuta", icon: Github, label: "GitHub", color: "from-slate-800 to-slate-900 hover:from-slate-900 hover:to-black" },
                 { href: "mailto:diyoadisuta@gmail.com", icon: Mail, label: "Email", color: "from-green-600 to-green-700 hover:from-green-700 hover:to-green-800" },
                 { href: "https://docs.google.com/document/d/1UwGEdHCMGfzg38Sl_0iN4vhxdeN6iSWkFqjT8iEkIUc/edit?usp=sharing", icon: FileText, label: "View CV", color: "from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800" },
-                { href: "https://drive.usercontent.google.com/download?id=1izLBEggnEtVLBqBJL2wTsEMoPyw7Zhhn&export=download&authuser=0", icon: Download, label: "Download CV", color: "from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800" }
+                { href: "https://drive.usercontent.google.com/download?id=1cnuRChMNZbAonVadsB7B3tbD2o45VGKw&export=download&authuser=0&confirm=t&uuid=ba077f6f-1ccf-4da2-94d0-14cb5906ff88&at=AKSUxGONNDIbh-jrVEHTYaTqG-T8:1759976972616", icon: Download, label: "Download CV", color: "from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800" }
               ].map((button, index) => (
                 <motion.a
                   key={button.label}
@@ -644,7 +644,6 @@ export default function Portfolio() {
                   <h3 className="text-2xl font-bold text-slate-800 dark:text-white">Sarjana Komputer - Teknik Informatika</h3>
                   <p className="text-lg text-blue-600 dark:text-blue-400">Universitas Nahdlatul Ulama Sidoarjo</p>
                   <p className="text-slate-600 dark:text-slate-300">Sidoarjo, Jawa Timur</p>
-                  <p className="text-slate-600 dark:text-slate-300">Semester 8 (Sekarang)</p>
                 </div>
                 
                 <div className="grid md:grid-cols-2 gap-8">
@@ -663,23 +662,13 @@ export default function Portfolio() {
                   <div>
                     <h4 className="text-lg font-semibold text-slate-800 dark:text-white mb-3">Academic Performance</h4>
                     <ul className="text-slate-600 dark:text-slate-300 space-y-1">
-                      <li>• IPK: 3.65/4.0</li>
+                      <li>• IPK: 3.63 / 4.0</li>
                       <li>• Strong interest in software development</li>
                       <li>• Focus on practical programming skills</li>
                       <li>• Experience with modern frameworks</li>
                       <li>• Passion for continuous learning</li>
                     </ul>
                   </div>
-                </div>
-                
-                <div className="mt-6 text-center">
-                  <p className="text-slate-600 dark:text-slate-300 text-sm">
-                    Mahasiswa semester 8 dengan minat besar pada pengembangan perangkat lunak, 
-                    kecerdasan buatan, dan analisis data. Berpengalaman dalam partisipasi 
-                    program Bangkit 2024 dari Google, Tokopedia, Gojek, & Traveloka yang 
-                    mengusung pembelajaran dalam pengembangan keahlian di bidang pemrograman, 
-                    pengembangan aplikasi web, dan pemodelan data.
-                  </p>
                 </div>
               </div>
             </div>
