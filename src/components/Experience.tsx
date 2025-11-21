@@ -24,29 +24,30 @@ export default function Experience() {
 
           {[
             {
-              title: "Mobile Development Cohort",
-              company: "Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka",
-              date: "Feb 2024 - Jun 2024",
-              location: "Remote",
-              description: "Selected as one of the top graduates from thousands of applicants. Specialized in Mobile Development (Android) and Soft Skills.",
+              title: "Front-End and Back-End Developer Learning Path",
+              company: "CodingCamp by DBS Foundation 2025",
+              date: "Feb 2025 - Jul 2025",
+              location: "Indonesia",
+              description: "Mengembangkan aplikasi web full-stack dan berkolaborasi dalam tim agile.",
               achievements: [
-                "Built 'Moodiometry' capstone project",
-                "Mastered Kotlin and Android Jetpack Compose",
-                "Learned Cloud Computing basics"
+                "Mengembangkan aplikasi web full-stack menggunakan HTML, CSS, JS, MySQL",
+                "Mengimplementasikan sistem autentikasi pengguna dan manajemen data",
+                "Membuat dan mengonsumsi API untuk data dinamis",
+                "Berkolaborasi dalam tim agile menggunakan Git/GitHub"
               ],
               icon: Award,
               color: "bg-blue-500"
             },
             {
-              title: "Laboratory Assistant",
-              company: "Universitas Gunadarma",
-              date: "2022 - 2024",
-              location: "Depok, Indonesia",
-              description: "Assisted in teaching and grading for various computer science courses. Mentored junior students in programming concepts.",
+              title: "Cloud Computing Learning Path",
+              company: "BANGKIT ACADEMY 2024 BATCH 2",
+              date: "Aug 2024 - Jan 2025",
+              location: "Indonesia",
+              description: "Mempelajari layanan Google Cloud Platform dan membangun proyek akhir berbasis cloud.",
               achievements: [
-                "Taught Algorithms & Data Structures",
-                "Managed lab sessions for 30+ students",
-                "Graded assignments and exams"
+                "Mempelajari dan menerapkan layanan Google Cloud Platform (GCP)",
+                "Berkolaborasi dalam tim lintas disiplin untuk proyek akhir",
+                "Mengimplementasikan pipeline CI/CD untuk otomatisasi deployment"
               ],
               icon: Briefcase,
               color: "bg-purple-500"

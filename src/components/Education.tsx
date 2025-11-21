@@ -36,20 +36,20 @@ export default function Education() {
               <h3 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-white mb-2">
                 Bachelor of Informatics Engineering
               </h3>
-              <h4 className="text-xl text-blue-600 dark:text-blue-400 mb-4 font-medium">Universitas Gunadarma</h4>
+              <h4 className="text-xl text-blue-600 dark:text-blue-400 mb-4 font-medium">Universitas Nahdlatul Ulama Sidoarjo</h4>
               
               <div className="flex flex-wrap gap-4 mb-6 text-slate-600 dark:text-slate-400 text-sm">
                 <div className="flex items-center gap-2">
                   <Calendar size={16} />
-                  <span>2020 - 2024</span>
+                  <span>2021 - 2025</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin size={16} />
-                  <span>Depok, Indonesia</span>
+                  <span>Sidoarjo, Indonesia</span>
                 </div>
                 <div className="flex items-center gap-2 px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full font-semibold">
                   <Star size={14} />
-                  <span>GPA: 3.56 / 4.00</span>
+                  <span>GPA: 3.63 / 4.00</span>
                 </div>
               </div>
 
