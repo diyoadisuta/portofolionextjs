@@ -12,6 +12,7 @@ import Footer from '@/components/Footer';
 import Dock from '@/components/Dock';
 import ThemeToggle from '@/components/ThemeToggle';
 import ScrollProgress from '@/components/ScrollProgress';
+import PortfolioSwitch from '@/components/PortfolioSwitch';
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('home');
@@ -45,14 +46,13 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-blue-950 dark:to-slate-800 relative overflow-hidden pb-24 transition-colors duration-300">
+    <div className="min-h-screen bg-[#F4F1DE] dark:bg-black relative overflow-hidden pb-24 transition-colors duration-300">
       <ScrollProgress />
       <ThemeToggle />
-      
-      {/* Additional background elements */}
-      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100/20 via-transparent to-transparent pointer-events-none"></div>
-      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-purple-100/20 via-transparent to-transparent pointer-events-none"></div>
-      
+      <PortfolioSwitch currentPage="it" />
+
+
+
       <Dock activeSection={activeSection} scrollToSection={scrollToSection} />
 
       <main>

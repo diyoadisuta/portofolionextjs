@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Github, Linkedin, Mail, Download, ChevronDown, Code, Star, FileText } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, Code } from 'lucide-react';
 
 const TypewriterText = ({ texts }: { texts: string[] }) => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -13,7 +13,7 @@ const TypewriterText = ({ texts }: { texts: string[] }) => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       const fullText = texts[currentTextIndex];
-      
+
       if (isDeleting) {
         setCurrentText(fullText.substring(0, currentText.length - 1));
       } else {
@@ -40,100 +40,93 @@ const TypewriterText = ({ texts }: { texts: string[] }) => {
 };
 
 export default function Hero() {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-20 relative overflow-hidden">
-      {/* Animated Background Elements */}
+      {/* Geometric Background Shapes - Bauhaus Style */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/2 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-100/40 via-transparent to-transparent dark:from-blue-900/20 transform -translate-x-1/2"></div>
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-purple-200/30 dark:bg-purple-900/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-1/3 -left-20 w-72 h-72 bg-blue-200/30 dark:bg-blue-900/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-20 right-20 w-96 h-96 bg-[#E63946] shape-circle opacity-20"></div>
+        <div className="absolute bottom-40 left-10 w-64 h-64 bg-[#1D3557] dark:bg-[#457B9D] opacity-20 shape-triangle"></div>
+        <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-[#FFB703] opacity-20"></div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto relative z-10 w-full">
-        <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-20">
-          
-          {/* Content */}
-          <div className="flex-1 text-center lg:text-left">
+        <div className="grid lg:grid-cols-5 gap-12 items-start">
+
+          {/* Content - Asymmetric left column (3/5) */}
+          <div className="lg:col-span-3 text-left">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-block px-4 py-2 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 font-medium text-sm mb-6 border border-blue-100 dark:border-blue-800"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3 }}
+              className="inline-block px-6 py-2 bg-[#1D3557] dark:bg-[#457B9D] text-white font-bold text-sm mb-6 border-4 border-black dark:border-white uppercase tracking-wider"
             >
-              👋 Welcome to my portfolio
+              👋 Portfolio
             </motion.div>
-            
-            <motion.h1 
-              className="text-5xl lg:text-7xl font-bold mb-6 tracking-tight text-slate-900 dark:text-white"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
+
+            <motion.h1
+              className="text-6xl lg:text-8xl font-bold mb-6 tracking-tight text-black dark:text-white uppercase"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.1, duration: 0.3 }}
             >
-              Hi, I'm <br />
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Dio Adista
+              Dio<br />
+              <span className="text-[#E63946]">
+                Adista
               </span>
             </motion.h1>
-            
-            <motion.div 
-              className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-8 h-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
+
+            <motion.div
+              className="text-2xl md:text-3xl text-black dark:text-white mb-8 font-bold uppercase"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.3 }}
             >
               I build{' '}
-              <span className="font-bold text-slate-800 dark:text-white relative inline-block">
-                <TypewriterText texts={["Web Apps", "Mobile Apps", "Digital Solution", "User Interface"]} />
-                <span className="absolute -bottom-1 left-0 w-full h-1 bg-blue-500/30 rounded-full"></span>
+              <span className="relative inline-block">
+                <TypewriterText texts={["Web Apps", "Mobile Apps", "Solutions", "Interfaces"]} />
+                <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#FFB703]"></span>
               </span>
             </motion.div>
-            
-            <motion.p 
-              className="text-lg text-slate-500 dark:text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.8 }}
+
+            <motion.p
+              className="text-lg text-black dark:text-white mb-10 max-w-xl leading-relaxed"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.3, duration: 0.3 }}
             >
-              Transforming ideas into reality through code. I specialize in building exceptional digital experiences that are fast, accessible, and visually stunning.
+              Transforming ideas into reality through code. Fresh graduate specializing in building exceptional digital experiences.
             </motion.p>
-            
-            <motion.div 
-              className="flex flex-wrap justify-center lg:justify-start gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.8 }}
+
+            <motion.div
+              className="flex flex-wrap gap-4"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.3 }}
             >
               <motion.a
                 href="https://drive.usercontent.google.com/download?id=1cnuRChMNZbAonVadsB7B3tbD2o45VGKw&export=download&authuser=0&confirm=t&uuid=ba077f6f-1ccf-4da2-94d0-14cb5906ff88&at=AKSUxGONNDIbh-jrVEHTYaTqG-T8:1759976972616"
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-semibold shadow-lg hover:shadow-blue-500/30 transition-all flex items-center gap-2"
+                className="px-8 py-4 bg-[#E63946] text-white font-bold uppercase tracking-wider border-4 border-black dark:border-white flex items-center gap-2"
               >
                 <Download size={20} />
                 Download CV
               </motion.a>
-              
+
               <div className="flex gap-2">
                 {[
-                  { icon: Github, href: "https://github.com/diyoadisuta" },
-                  { icon: Linkedin, href: "https://linkedin.com/in/dio-adista" },
-                  { icon: Mail, href: "mailto:diyoadisuta@gmail.com" }
+                  { icon: Github, href: "https://github.com/diyoadisuta", color: "#1D3557" },
+                  { icon: Linkedin, href: "https://linkedin.com/in/dio-adista", color: "#1D3557" },
+                  { icon: Mail, href: "mailto:diyoadisuta@gmail.com", color: "#1D3557" }
                 ].map((social, index) => (
                   <motion.a
                     key={index}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1, y: -2 }}
-                    whileTap={{ scale: 0.9 }}
-                    className="p-4 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-full shadow-md hover:shadow-lg border border-slate-100 dark:border-slate-700 transition-all"
+                    whileHover={{ y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="p-4 bg-[#F4F1DE] dark:bg-black text-black dark:text-white border-4 border-black dark:border-white"
                   >
                     <social.icon size={20} />
                   </motion.a>
@@ -141,75 +134,48 @@ export default function Hero() {
               </div>
             </motion.div>
           </div>
-          
-          {/* Profile Image */}
-          <motion.div 
-            className="relative"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, type: "spring" }}
+
+          {/* Profile Image - Asymmetric right column (2/5) */}
+          <motion.div
+            className="lg:col-span-2 relative mt-8 lg:mt-0"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3 }}
           >
-            <div className="relative w-72 h-72 md:w-96 md:h-96">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 rounded-[2rem] rotate-6 opacity-20 animate-pulse"></div>
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-pink-600 rounded-[2rem] -rotate-6 opacity-20 animate-pulse delay-75"></div>
-              <div className="relative w-full h-full rounded-[2rem] overflow-hidden border-4 border-white dark:border-slate-800 shadow-2xl bg-white dark:bg-slate-800">
+            <div className="relative w-full aspect-square max-w-md mx-auto lg:mx-0">
+              {/* Red circle background accent */}
+              <div className="absolute -right-8 -bottom-8 w-3/4 h-3/4 bg-[#E63946] shape-circle z-0"></div>
+
+              {/* Image container */}
+              <div className="relative w-full h-full border-8 border-black dark:border-white z-10 overflow-hidden">
                 <Image
-                  src="/RMB05805.png"
+                  src="/FB_IMG_1590244503401.jpg"
                   alt="Dio Adista Laksono"
                   fill
                   className="object-cover"
                   priority
                 />
               </div>
-              
-              {/* Floating Badges */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -right-8 top-10 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3"
+
+              {/* Floating Code Badge - Geometric */}
+              <motion.div
+                whileHover={{ y: -2 }}
+                className="absolute -left-4 top-16 bg-[#1D3557] dark:bg-[#457B9D] p-4 border-4 border-black dark:border-white flex items-center gap-3 z-20"
               >
-                <div className="bg-blue-100 dark:bg-blue-900/30 p-2 rounded-lg">
-                  <Code size={24} className="text-blue-600 dark:text-blue-400" />
+                <div className="bg-[#FFB703] p-2 border-2 border-black">
+                  <Code size={24} className="text-black" />
                 </div>
                 <div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Developer</p>
-                  <p className="text-sm font-bold text-slate-800 dark:text-white">Full Stack</p>
+                  <p className="text-xs text-white font-bold uppercase">Developer</p>
+                  <p className="text-sm font-bold text-white">Full Stack</p>
                 </div>
               </motion.div>
-              
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -left-8 bottom-10 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3"
-              >
-                <div className="bg-purple-100 dark:bg-purple-900/30 p-2 rounded-lg">
-                  <Star size={24} className="text-purple-600 dark:text-purple-400" />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Experience</p>
-                  <p className="text-sm font-bold text-slate-800 dark:text-white">3+ Years</p>
-                </div>
-              </motion.div>
+
+              {/* Yellow square accent - bottom right */}
+              <div className="absolute -right-12 top-1/3 w-24 h-24 bg-[#FFB703] border-4 border-black dark:border-white"></div>
             </div>
           </motion.div>
         </div>
-        
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-slate-400 cursor-pointer"
-            onClick={() => scrollToSection('about')}
-          >
-            <span className="text-sm font-medium tracking-widest uppercase">Scroll</span>
-            <ChevronDown size={20} />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );

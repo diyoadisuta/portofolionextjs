@@ -1,69 +1,77 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code, Globe, Database, Smartphone } from 'lucide-react';
+import { Globe, Smartphone, Database } from 'lucide-react';
 
 export default function About() {
   return (
-    <section id="about" className="py-20 px-4 bg-white dark:bg-slate-800 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
+    <section id="about" className="py-20 px-4 bg-[#F4F1DE] dark:bg-black relative overflow-hidden">
+      {/* Geometric background accents */}
+      <div className="absolute top-20 right-0 w-48 h-48 bg-[#FFB703] opacity-10"></div>
+      <div className="absolute bottom-20 left-0 w-64 h-64 bg-[#1D3557] dark:bg-[#457B9D] opacity-10 shape-circle"></div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Asymmetric grid layout */}
+        <div className="grid lg:grid-cols-7 gap-12 items-start">
+          {/* Left column - 4/7 */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
-            className="flex-1"
+            className="lg:col-span-4"
           >
-            <h2 className="text-4xl font-bold text-slate-800 dark:text-white mb-6">About Me</h2>
-            <div className="w-24 h-1 bg-blue-600 rounded-full mb-8"></div>
-            <p className="text-lg text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
-              I am a fresh graduate in Informatics Engineering with a strong passion for software development. 
-              My journey in tech started with a curiosity about how things work, which led me to explore various technologies 
+            <h2 className="text-5xl font-bold text-black dark:text-white mb-6 uppercase">About Me</h2>
+            <div className="w-32 h-2 bg-[#E63946] mb-8"></div>
+            <p className="text-lg text-black dark:text-white mb-6 leading-relaxed">
+              I am a fresh graduate in Informatics Engineering with a strong passion for software development.
+              My journey in tech started with a curiosity about how things work, which led me to explore various technologies
               from web development to mobile apps and machine learning.
             </p>
-            <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
-              I enjoy solving complex problems and turning ideas into functional, user-friendly applications. 
+            <p className="text-lg text-black dark:text-white mb-8 leading-relaxed">
+              I enjoy solving complex problems and turning ideas into functional, user-friendly applications.
               I am constantly learning and adapting to new technologies to build better solutions.
             </p>
-            
+
+            {/* Stats - Geometric containers */}
             <div className="grid grid-cols-2 gap-6">
-              <div className="p-4 bg-slate-50 dark:bg-slate-700/50 rounded-xl border border-slate-100 dark:border-slate-700">
-                <h3 className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-1">10+</h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">Projects Completed</p>
+              <div className="p-6 bg-[#E63946] border-4 border-black dark:border-white">
+                <h3 className="text-5xl font-bold text-white mb-1">10+</h3>
+                <p className="text-sm text-white uppercase font-bold tracking-wider">Projects</p>
               </div>
-              <div className="p-4 bg-slate-50 dark:bg-slate-700/50 rounded-xl border border-slate-100 dark:border-slate-700">
-                <h3 className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-1">3+</h3>
-                <p className="text-sm text-slate-500 dark:text-slate-400">Years Coding</p>
+              <div className="p-6 bg-[#1D3557] dark:bg-[#457B9D] border-4 border-black dark:border-white">
+                <h3 className="text-5xl font-bold text-white mb-1">3+</h3>
+                <p className="text-sm text-white uppercase font-bold tracking-wider">Years</p>
               </div>
             </div>
           </motion.div>
-          
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
+
+          {/* Right column - 3/7 staggered */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.3 }}
             viewport={{ once: true }}
-            className="flex-1 grid gap-6"
+            className="lg:col-span-3 grid gap-6 lg:mt-20"
           >
             {[
-              { icon: Globe, title: "Web Development", desc: "Building responsive and modern web applications using React, Next.js, and Tailwind CSS." },
-              { icon: Smartphone, title: "Mobile Development", desc: "Creating native Android applications with Kotlin and cross-platform apps." },
-              { icon: Database, title: "Backend Systems", desc: "Designing robust APIs and database architectures using Node.js and SQL/NoSQL." }
+              { icon: Globe, title: "Web Development", color: "#E63946" },
+              { icon: Smartphone, title: "Mobile Development", color: "#1D3557" },
+              { icon: Database, title: "Backend Systems", color: "#FFB703" }
             ].map((item, index) => (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.02, x: 10 }}
-                className="p-6 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 transition-colors group"
+                whileHover={{ x: 4 }}
+                className="p-6 bg-[#F4F1DE] dark:bg-black border-4 border-black dark:border-white"
               >
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-white dark:bg-slate-800 rounded-lg shadow-sm group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                    <item.icon size={24} />
+                <div className="flex items-center gap-4 mb-3">
+                  <div
+                    className="p-3 border-4 border-black dark:border-white"
+                    style={{ backgroundColor: item.color }}
+                  >
+                    <item.icon size={24} className="text-white" />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2">{item.title}</h3>
-                    <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{item.desc}</p>
-                  </div>
+                  <h3 className="text-xl font-bold text-black dark:text-white uppercase">{item.title}</h3>
                 </div>
               </motion.div>
             ))}

@@ -3,24 +3,88 @@
 @variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Bauhaus Primary Colors */
+  --bauhaus-red: #E63946;
+  --bauhaus-blue: #1D3557;
+  --bauhaus-yellow: #FFB703;
+  --bauhaus-beige: #F4F1DE;
+  --bauhaus-black: #000000;
+  --bauhaus-white: #FFFFFF;
+  
+  /* Light Mode */
+  --background: #F4F1DE;
+  --foreground: #000000;
 }
 
 .dark {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  /* Dark Mode */
+  --background: #000000;
+  --foreground: #FFFFFF;
+  --bauhaus-blue: #457B9D; /* Lighter blue for dark mode */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-poppins);
+  --font-sans: var(--font-space-grotesk);
+  
+  /* Bauhaus Color Tokens */
+  --color-bauhaus-red: var(--bauhaus-red);
+  --color-bauhaus-blue: var(--bauhaus-blue);
+  --color-bauhaus-yellow: var(--bauhaus-yellow);
+  --color-bauhaus-beige: var(--bauhaus-beige);
+  --color-bauhaus-black: var(--bauhaus-black);
+  --color-bauhaus-white: var(--bauhaus-white);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
   transition: background-color 0.3s, color 0.3s;
+}
+
+/* Bauhaus Geometric Shape Utilities */
+.shape-circle {
+  border-radius: 50%;
+}
+
+.shape-triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.shape-square {
+  border-radius: 0;
+}
+
+.bauhaus-border {
+  border: 4px solid currentColor;
+}
+
+.bauhaus-border-thick {
+  border: 6px solid currentColor;
+}
+
+/* Bauhaus Typography */
+.bauhaus-heading {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Remove all shadows and blur effects globally */
+* {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* Flat, sharp button style */
+button, .button {
+  border-radius: 0;
+  transition: all 0.1s ease;
+}
+
+button:hover, .button:hover {
+  transform: translateY(-2px);
 }

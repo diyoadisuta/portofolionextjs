@@ -1,42 +1,37 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Sun, Moon } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { Moon, Sun } from 'lucide-react';
 
 export default function ThemeToggle() {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // Check initial theme
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches || 
-        document.documentElement.classList.contains('dark')) {
-      setIsDark(true);
-      document.documentElement.classList.add('dark');
-    }
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    setIsDark(isDarkMode);
   }, []);
 
   const toggleTheme = () => {
+    document.documentElement.classList.toggle('dark');
     setIsDark(!isDark);
-    if (isDark) {
-      document.documentElement.classList.remove('dark');
-    } else {
-      document.documentElement.classList.add('dark');
-    }
   };
 
   return (
     <motion.button
       onClick={toggleTheme}
-      className="fixed top-6 right-6 z-50 p-3 rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-slate-200 dark:border-slate-700 shadow-lg text-slate-800 dark:text-yellow-400"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.5 }}
-      aria-label="Toggle Theme"
+      className="fixed top-4 right-4 z-50 p-3 bg-[#F4F1DE] dark:bg-black border-4 border-black dark:border-white"
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.95 }}
+      aria-label="Toggle theme"
     >
-      {isDark ? <Sun size={20} /> : <Moon size={20} />}
+      <div className="relative w-6 h-6">
+        {isDark ? (
+          <Sun size={24} className="text-[#FFB703]" />
+        ) : (
+          <Moon size={24} className="text-black" />
+        )}
+      </div>
     </motion.button>
   );
 }
